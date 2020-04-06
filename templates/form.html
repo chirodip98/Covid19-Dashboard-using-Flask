@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <title>Fill Details!</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href="/static/css/flip.css">
+    <link rel='stylesheet' href="/static/css/social.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+    <nav class="navbar navbar-expand-md navbar" style="background-color: #050101;">
+        <!-- Brand -->
+        <a class="navbar-brand" style="color:white; font-size: 22px;">CatenDev</a>
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+        </div>
+        </nav>
+      <body>
+      <!--Intro Card-->
+      <div class="jumbotron jumbotron-fluid " style="background-color:transparent;color: white;">
+        <div class="container">
+          <h1>Covid-19 Interactive Dashboard</h1>
+          <p>A complete site which only relies on facts and information reviewed and approved by Officials</p>
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid " style="background-color:transparent;color: white; width:55%; display:inline-table; margin:60px;">
+        <h2>Fill up the Form</h2>
+        <form class="form-horizontal" action="/results" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Name:</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="Enter Name" name='name'  required>
+              </div>
+            </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="age">Age:</label>
+                <div class="col-sm-10">
+      <input type="text" class="form-control" id="age" name='age' placeholder="Enter Age" required>
+            </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Gender</label>
+                <div class="col-sm-10">
+                  <input class="form-control" id="Male" type="radio" name= 'sex' value="Male">Male
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-10">
+                  <input class="form-control" id="Female" type="radio" name= 'sex' value="Female">Female
+                  </div>
+                  </div>
+                  <div class="form-group">
+                  <div class="col-sm-10">
+                  <input class="form-control" id="Others" type="radio" name= 'sex' value="Others">Others
+                </div>
+                </div>
+                </div>
+            <input type='file' id='check' name='check' accept="image/*"  onchange="showImage(this)" required/>
+            <br>
+            <br>
+            <cite>upload Xrays images only</cite>
+            <br>
+            <center>
+            <button type="submit" id='submit' class="btn btn-info" style="background-color:#0c0203; color: white;">Upload</button>
+            </center>
+            </form>
+      </div>
+      <div class='jumbotron' style="display:inline-table; width:300px; height: 400px; padding:40px; position: relative; background-color: transparent; border:0px; border-color:#0c0203;">
+        <img id="thumb" style="width:300px; height: 300px;;"  src="" alt=""/>
+        <br>
+        <br>
+        <center>
+        <div class="spinner-grow text-primary"></div>
+        <div class="spinner-grow text-success"></div>
+        <div class="spinner-grow text-info"></div>
+        <div class="spinner-grow text-warning"></div>
+        <div class="spinner-grow text-danger"></div>
+        </center>
+      </div>
+      
+      <div class="toast" data-autohide="true" style="position: fixed;right:1%; top:50%" data-delay=1000>
+        <div class="toast-header">
+          <strong class="mr-auto text-primary">Note</strong>
+          <small class="text-muted">just now</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+          <p style="color: green;">This prediction is based on a Machine Learning Technique SVM</p><br>
+          <strong>Team CatenDev suggests you to don not solely rely on the results.
+            If you are facing any trouble, seek medical help</strong><br>
+            <cite>We care for you , together we can defeat the COVID-19!</cite>
+          </strong>
+        </div>
+      </div>
+    <!--footer-->
+    <div class="container" style="background-color: #050101; width: 100%;">
+      <h1 style="color: white;">A CatenDevlopment Product</h1>
+      <p>Loved our Product ? Click any of the below to show Love!</p>
+      <p><a href="http://www.facebook.com/chirodiplodh/" class="fa fa-facebook"></a>
+        <a href="https://www.twitter.com/chirodip_lodh/" class="fa fa-twitter">
+            <a href="https://www.instagram.com/mr_lodh98/" class="fa fa-instagram">
+              <a href="https://github.com/chirodip98" class="fa fa-github"></a>
+            </a>
+          </a>
+        </a>
+      </p>
+      <footer style="text-align: center; color: white; font-style: normal; background-color:#050101 ;">
+        <p> <cite>Chirodip Lodh Choudhury ,GIETU</cite></p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+    function showImage(fileInput) {
+        var files = fileInput.files;
+        for (var i = 0; i < files.length; i++) {           
+            var file = files[i];
+            var imageType = /image.*/;     
+            if (!file.type.match(imageType)) {
+                continue;
+            }           
+            var img=document.getElementById("thumb");            
+            img.file = file;    
+            var reader = new FileReader();
+            reader.onload = (function(aImg) { 
+                return function(e) { 
+                    aImg.src = e.target.result; 
+                }; 
+            })(img);
+            reader.readAsDataURL(file);
+            return 1;
+        }    
+    }
+    $(document).ready(function(){
+  $('.toast').toast('show').toast('delay:1000');
+});
+</script>
+
